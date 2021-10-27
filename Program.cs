@@ -39,16 +39,19 @@ namespace CollegeApp
             employee1.FirstName = "Trevor";
             employee1.LastName = "MacDonald";
             employee1.Status = EmployeeStatus.Employed;
+            employee1.BadgeNumber = college.GetNextBadgeNumber();
 
             Employee employee2 = new Employee();
             employee2.FirstName = "Trevor";
             employee2.LastName = "MacDonald";
             employee2.Status = EmployeeStatus.Employed;
+            employee2.BadgeNumber = college.GetNextBadgeNumber();
 
             Student student1 = new Student();
             student1.FirstName = "Paul";
             student1.LastName = "Daniels";
             student1.Status = StudentStatus.Undergraduate;
+            student1.BadgeNumber = college.GetNextBadgeNumber();
 
             college.Employees = new List<Employee>
             {
@@ -70,7 +73,8 @@ namespace CollegeApp
                 {
                     FirstName = Faker.Name.First(),
                     LastName = Faker.Name.Last(),
-                    Status = Faker.Enum.Random<StudentStatus>()
+                    Status = Faker.Enum.Random<StudentStatus>(),
+                    BadgeNumber = college.GetNextBadgeNumber()
                 });
             }
         }
@@ -83,7 +87,8 @@ namespace CollegeApp
                 {
                     FirstName = Faker.Name.First(),
                     LastName = Faker.Name.Last(),
-                    Status = Faker.Enum.Random<EmployeeStatus>()
+                    Status = Faker.Enum.Random<EmployeeStatus>(),
+                    BadgeNumber = college.GetNextBadgeNumber()
                 });
             }
         }

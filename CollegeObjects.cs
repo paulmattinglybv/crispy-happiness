@@ -17,6 +17,13 @@ namespace CollegeApp
         public List<Student> Students { get; set; }
 
         public List<Employee> Employees { get; set; }
+
+        private int _lastIssuedBadgeNumber = 0;
+
+        public int GetNextBadgeNumber()
+        {
+            return ++_lastIssuedBadgeNumber;
+        }
     }
 
     public class Person
@@ -29,7 +36,7 @@ namespace CollegeApp
 
         public string FullName { get { return $"{FirstName} {LastName}"; } }
 
-        public string BadgeNumber { get; set; }
+        public int BadgeNumber { get; set; }
 
     }
 
